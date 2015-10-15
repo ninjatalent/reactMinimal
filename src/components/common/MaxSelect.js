@@ -1,9 +1,11 @@
 "use strict";
 
 var React = require('react');
-
+var _MaxInputChangeMixin = require('./_MaxInputChangeMixin');
 
 var MaxSelect = React.createClass({
+    mixins: [_MaxInputChangeMixin],
+
     render: function(){
         var wrapperClass = 'form-group';
         if(this.props.error && this.props.error.length >0){
@@ -24,7 +26,7 @@ var MaxSelect = React.createClass({
                            placeholder={this.props.placeholder}
                            value = {this.props.value}
                            ref={this.props.name}
-                           onChange = {this.props.onChange}
+                           onChange = {this.onInputChanged}
                            data-distinguish={this.props.name}>
                         {this.props.values.map(function(item){
                             return <option value={item.value}>{item.name}</option>

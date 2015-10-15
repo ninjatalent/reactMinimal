@@ -28,7 +28,7 @@ var Minput = React.createClass({
                 placeholder={this.props.placeholder}
                 value = {this.props.value}
                 ref={this.props.name}
-                onChange = {this.props.onChange}
+                onChange = {this.onInputChanged}
                 data-distinguish={this.props.name}/>
                 <div className="error">{this.props.error}</div>
             </div>

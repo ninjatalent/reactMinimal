@@ -1,9 +1,12 @@
 "use strict";
 
 var React = require('react');
+var _MaxInputChangeMixin = require('./_MaxInputChangeMixin');
 
 
 var Mtext = React.createClass({
+    mixins: [_MaxInputChangeMixin],
+
     render: function(){
         var wrapperClass = 'form-group';
         if(this.props.error && this.props.error.length >0){
@@ -20,7 +23,7 @@ var Mtext = React.createClass({
                            value = {this.props.value}
                            placeholder={this.props.placeholder}
                            ref={this.props.name}
-                           onChange = {this.props.onChange}
+                           onChange = {this.onInputChanged}
                            data-distinguish={this.props.name}
                            rows="3" />
 

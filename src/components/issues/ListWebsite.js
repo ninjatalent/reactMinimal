@@ -4,9 +4,7 @@ var React = require('react');
 var moment = require('moment');
 var MaxSelect = require('../common/MaxSelect');
 var MaxTextField = require('../common/MaxTextField');
-
-var DateTimePicker = require('react-widgets/lib/DateTimePicker')
-
+var MaxDatePicker = require('../common/MaxDatePicker');
 
 var WebsiteList = React.createClass({
     handleModalState: function(id){
@@ -36,8 +34,7 @@ var WebsiteList = React.createClass({
                 </tr>
             );
         };
-
-
+        console.log(this.props.form.eta);
         return(
             <div>
                 <h1>View Website Issues</h1>
@@ -89,10 +86,13 @@ var WebsiteList = React.createClass({
 
                                     <br />
                                     Datepicker goes here
-                                    <input type="text"
-                                           name="eta"
-                                           value={this.props.form.eta}
-                                           onChange = {this.props.onChange} />
+
+                                    <MaxDatePicker
+                                        name="eta"
+                                        label="Datepicker goes here"
+                                        value={this.props.form.eta}
+                                        onChange={this.props.onChange}
+                                        error={this.props.error.eta} />
                                     <br /><br />
 
                                     <input type="button" id="send" value="Save" className="btn btn-default" onClick={this.props.formSave}  />
