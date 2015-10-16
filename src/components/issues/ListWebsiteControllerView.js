@@ -32,8 +32,8 @@ var iReportControllerView = React.createClass({
     setModelState: function(event){
 
 
-            var field = event.target.name;
-            var value = event.target.value;
+            var field = event.name;
+            var value = event.value;
 
             this.state.form[field] = value;
             this.setState({form: this.state.form});
